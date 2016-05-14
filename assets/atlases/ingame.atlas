@@ -1,0 +1,33 @@
+images {
+  image: "/assets/gfx/bg.png"
+}
+images {
+  image: "/assets/gfx/bird.png"
+}
+images {
+  image: "/assets/gfx/btn_start.png"
+}
+images {
+  image: "/assets/gfx/end_board.png"
+}
+images {
+  image: "/assets/gfx/game_over.png"
+}
+images {
+  image: "/assets/gfx/get_ready.png"
+}
+images {
+  image: "/assets/gfx/ground.png"
+}
+images {
+  image: "/assets/gfx/instructions.png"
+}
+images {
+  image: "/assets/gfx/new_sign.png"
+}
+images {
+  image: "/assets/gfx/pipe.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
