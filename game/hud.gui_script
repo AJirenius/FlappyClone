@@ -1,0 +1,11 @@
+function init(self)
+    self.score = 0
+end
+
+function on_message(self, message_id, message, sender)
+	print("message:",message_id)
+    if message_id == hash("add_score") then
+    	self.score = self.score + message.score
+    	gui.set_text(gui.get_node("score"), tostring(self.score))
+    end
+end

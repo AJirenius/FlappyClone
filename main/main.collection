@@ -19,4 +19,127 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "bird"
+  prototype: "/game/bird.go"
+  position {
+    x: 28.676924
+    y: 140.3077
+    z: 0.1
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "script"
+    properties {
+      id: "gravity"
+      value: "15.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "flap_strength"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "norm_rotation"
+      value: "0.3"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "ground"
+  prototype: "/game/ground.go"
+  position {
+    x: 0.28936294
+    y: 26.0
+    z: 0.2
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "script"
+    properties {
+      id: "speed"
+      value: "40.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "hud"
+  prototype: "/game/hud.go"
+  position {
+    x: 201.92374
+    y: 88.15164
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 scale_along_z: 0
+embedded_instances {
+  id: "pipe_factory"
+  data: "embedded_components {\n"
+  "  id: \"pipes\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/game/pipes.go\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 133.6501
+    y: 74.49691
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}

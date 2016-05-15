@@ -1,0 +1,45 @@
+go.property("speed",0)
+
+function init(self)
+   assert(self.speed ~= 0, "Didnt get properties from factory")
+   self.pos = go.get_position()
+   self.did_give_score = false
+   self.bird_position = go.get_position("/bird")
+   
+end
+
+function final(self)
+    -- Add finalization code here
+    -- Remove this function if not needed
+end
+
+function update(self, dt)
+	self.speed = go.get("/ground#script", "speed")
+	self.pos.x = self.pos.x - self.speed * dt
+
+	if self.pos.x < self.bird_position.x and self.did_give_score == false then
+		msg.post("/hud","add_score", { score = 1 }) 
+		self.did_give_score = true
+	end
+	
+	
+   	go.set_position(self.pos)
+   	if self.pos.x < -100 then 
+   		go.delete() 
+   	end
+end
+
+function on_message(self, message_id, message, sender)
+    -- Add message-handling code here
+    -- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+    -- Add input-handling code here
+    -- Remove this function if not needed
+end
+
+function on_reload(self)
+    -- Add reload-handling code here
+    -- Remove this function if not needed
+end

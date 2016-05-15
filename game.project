@@ -4,6 +4,7 @@ version = 0.1
 
 [bootstrap]
 main_collection = /main/main.collectionc
+render = /main/custom.renderc
 
 [input]
 game_binding = /input/game.input_bindingc
@@ -11,7 +12,7 @@ game_binding = /input/game.input_bindingc
 [display]
 width = 432
 height = 768
-display_profiles = /main/custom.renderc
+display_profiles = /builtins/render/default.display_profilesc
 fullscreen = 0
 dynamic_orientation = 0
 
@@ -20,4 +21,8 @@ scale = 0.02
 
 [script]
 shared_state = 1
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
 
