@@ -13,6 +13,7 @@ function init(self)
 	self.pos = go.get_position()
 	self.pipe_time = self.time_between_pipes
 	self.is_live = true
+	self.send_pipes = false
 end
 function update(self, dt)
    if self.is_live == false then return end
@@ -24,20 +25,22 @@ function update(self, dt)
    go.set_position(self.pos)
    
    
-   
-   self.pipe_time = self.pipe_time - dt
-   if self.pipe_time < 0 then
-		self.pipe_time = self.time_between_pipes
-		local ry =(math.random() * (self.highest_pipe_y - self.lowest_pipe_y)) + self.lowest_pipe_y
-		
-		local pos = vmath.vector3(190,ry,0.08)
-		factory.create("/pipe_factory#pipes", pos, nil, { speed = self.speed })
-   end
-   
+   if self.send_pipes == true then
+	   self.pipe_time = self.pipe_time - dt
+	   if self.pipe_time < 0 then
+			self.pipe_time = self.time_between_pipes
+			local ry =(math.random() * (self.highest_pipe_y - self.lowest_pipe_y)) + self.lowest_pipe_y
+			
+			local pos = vmath.vector3(190,ry,0.08)
+			factory.create("/pipe_factory#pipes", pos, nil, { speed = self.speed })
+	   end
+	end   
 end
 
 function on_message(self, message_id, message, sender)
-    if message_id == hash("game_over") then
+    if message_id == hash("start_game") then
+    	self.send_pipes = true
+    elseif message_id == hash("game_over") then
     	self.is_live = false
     	self.speed = 0
     end
